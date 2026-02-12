@@ -12,12 +12,16 @@ The mobile app estimates distance from each beacon using **RSSI (Received Signal
 
 ## Project Context
 
-This is an academic project at **New York University (NYU)**. Future development goals include multi-beacon trilateration for improved positioning accuracy, sensor fusion, and support for multiple floors.
+- **Institution:** New York University (NYU)
+- **Course:** [ECE-UY - 4183	Wireless Communications]
+- **Instructor:** [Dr. Micheal Knox]
+
+Future development goals include multi-beacon trilateration for improved positioning accuracy, sensor fusion, and support for multiple floors.
 
 ## Contact
 
-- **Name:** [Hongtai Du] & [Christopher Fonseca]
-- **Email:** [hd2609@nyu.edu] & [cjf8329@nyu.edu]
+- **Names:** [Hongtai Du] & [Christopher Fonseca]
+- **Emails:** [hd2609@nyu.edu] & [cjf8329@nyu.edu]
 
 ---
 
