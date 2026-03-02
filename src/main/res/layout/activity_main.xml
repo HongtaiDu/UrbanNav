@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
+
+    <!-- Top buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_scan_again"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Scan"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="⚙"
+            android:textSize="18sp"
+            android:minWidth="48dp" />
+    </LinearLayout>
+
+    <!-- Beacon list (hidden while scanning) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_beacons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+    <!-- Status/info area (below list) -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:text="=== BLE Scanner ===\n\n" />
+    </ScrollView>
+
+</LinearLayout>
