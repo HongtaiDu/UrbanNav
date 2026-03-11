@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <!-- Beacon name -->
+    <TextView
+        android:id="@+id/text_beacon_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <!-- MAC address -->
+    <TextView
+        android:id="@+id/text_beacon_mac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:textColor="#718096"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Calibrated power -->
+    <TextView
+        android:id="@+id/text_measured_power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:textColor="#9AA5B4"
+        android:layout_marginBottom="32dp" />
+
+    <!-- ── Live state: distance + debug rows ── -->
+
+    <TextView
+        android:id="@+id/text_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="56sp"
+        android:textStyle="bold"
+        android:textColor="#1A202C"
+        android:text="…"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#718096"
+        android:text="estimated distance"
+        android:layout_marginBottom="40dp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDF2F7"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/text_raw_rssi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="monospace"
+        android:textColor="#4A5568"
+        android:text="Raw RSSI: —"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/text_filtered_rssi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="monospace"
+        android:textColor="#3182CE"
+        android:text="Filtered RSSI: —"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/text_samples"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:fontFamily="monospace"
+        android:textColor="#9AA5B4"
+        android:text="Filter samples: 0/10"
+        android:layout_marginBottom="32dp" />
+
+    <!-- ── Out-of-range overlay (hidden while beacon is alive) ── -->
+
+    <LinearLayout
+        android:id="@+id/layout_out_of_range"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚠ Beacon out of range"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#E53E3E"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No signal received for 5 seconds."
+            android:textSize="14sp"
+            android:textColor="#718096"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btn_go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Go Back to List"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
