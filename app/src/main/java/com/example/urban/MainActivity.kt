@@ -44,6 +44,11 @@ class MainActivity : AppCompatActivity() {
         Manifest.permission.ACCESS_COARSE_LOCATION
     )
 
+    private fun isKnownBeacon(mac: String): Boolean {
+        val knownBeacons = loadBeacons(filesDir)
+        return knownBeacons.any { it.mac.equals(mac, ignoreCase = true) }
+    }
+
     private val scanCallback = object : ScanCallback() {
         override fun onScanResult(callbackType: Int, result: ScanResult) {
             devicesFound++
@@ -52,6 +57,8 @@ class MainActivity : AppCompatActivity() {
             val address = device.address
             val rssi = result.rssi
             Log.d("BLE_SCAN", "Device: ${name ?: "Unknown"} | MAC: $address | RSSI: $rssi")
+
+            if (!isKnownBeacon(address)) return
 
             runOnUiThread {
                 appendStatus("[$devicesFound] ${name ?: "Unknown"} | $address | RSSI: $rssi")
