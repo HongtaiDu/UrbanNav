@@ -1,11 +1,13 @@
 package com.example.calibration
 
 import android.Manifest
+import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
 import android.bluetooth.le.ScanCallback
 import android.bluetooth.le.ScanResult
 import android.bluetooth.le.ScanSettings
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
@@ -164,7 +166,7 @@ class BeaconDetailActivity : AppCompatActivity() {
     private fun startScan() {
         if (scanning || targetMac.isEmpty()) return
 
-        val hasPermission = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+        val hasPermission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) == PackageManager.PERMISSION_GRANTED
         } else {
             ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
@@ -174,13 +176,22 @@ class BeaconDetailActivity : AppCompatActivity() {
             return
         }
 
-        val btScanner = (getSystemService(BLUETOOTH_SERVICE) as? BluetoothManager)
-            ?.adapter?.bluetoothLeScanner ?: return
+        val adapter = (getSystemService(BLUETOOTH_SERVICE) as? BluetoothManager)?.adapter ?: return
+        val btScanner = adapter.bluetoothLeScanner ?: return
 
-        val settings = ScanSettings.Builder()
+        val settingsBuilder = ScanSettings.Builder()
             .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
             .setCallbackType(ScanSettings.CALLBACK_TYPE_ALL_MATCHES)
-            .build()
+
+        // Enable Extended Advertising if supported
+        if (adapter.isLeExtendedAdvertisingSupported) {
+            settingsBuilder.setLegacy(false)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                settingsBuilder.setPhy(ScanSettings.PHY_LE_ALL_SUPPORTED)
+            }
+        }
+
+        val settings = settingsBuilder.build()
 
         try {
             btScanner.startScan(null, settings, scanCallback)

@@ -3,8 +3,10 @@ package com.example.calibration
 import android.Manifest
 import android.bluetooth.BluetoothManager
 import android.bluetooth.le.*
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -133,25 +135,52 @@ class MainActivity : AppCompatActivity() {
             ActivityCompat.requestPermissions(this, requiredPermissions, REQUEST_PERMISSIONS)
             return
         }
+
         val btAdapter = (getSystemService(BLUETOOTH_SERVICE) as? BluetoothManager)?.adapter
         if (btAdapter == null || !btAdapter.isEnabled) {
             setStatus("❌ Bluetooth is off.")
             return
         }
+
+        // Check for Location Services toggle (GPS)
+        if (!isLocationEnabled()) {
+            setStatus("❌ Location Services (GPS) are off.")
+            return
+        }
+
+        if (!btAdapter.isLeExtendedAdvertisingSupported) {
+            Log.w("BLE", "Device does not support Extended Advertising.")
+        }
+
         bluetoothLeScanner = btAdapter.bluetoothLeScanner ?: run {
             setStatus("❌ BLE scanner unavailable.")
             return
         }
-        startScan()
+        startScan(btAdapter.isLeExtendedAdvertisingSupported)
     }
 
-    private fun startScan() {
+    private fun isLocationEnabled(): Boolean {
+        val lm = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return lm.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
+                lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+    }
+
+    private fun startScan(supportExtended: Boolean) {
         if (scanning) return
 
-        val settings = ScanSettings.Builder()
+        val settingsBuilder = ScanSettings.Builder()
             .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
             .setCallbackType(ScanSettings.CALLBACK_TYPE_ALL_MATCHES)
-            .build()
+
+        // Enable Extended Advertising if supported
+        if (supportExtended) {
+            settingsBuilder.setLegacy(false)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                settingsBuilder.setPhy(ScanSettings.PHY_LE_ALL_SUPPORTED)
+            }
+        }
+
+        val settings = settingsBuilder.build()
 
         scanning = true
         binding.btnScanAgain.isEnabled = false
