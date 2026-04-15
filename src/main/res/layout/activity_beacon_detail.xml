@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
+
+    <!-- Position result -->
+    <TextView
+        android:id="@+id/tv_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:fontFamily="monospace"
+        android:textColor="#3182CE"
+        android:text="Position: waiting for ≥3 beacons…"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Active beacon count -->
+    <TextView
+        android:id="@+id/tv_beacon_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="#718096"
+        android:fontFamily="monospace"
+        android:text="Active beacons: 0 / 0"
+        android:layout_marginBottom="12dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDF2F7"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Live beacon list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_beacons"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone" />
+
+    <!--    &lt;!&ndash; Computed X-Y coordinate &ndash;&gt;-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_xy_coordinate"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textSize="14sp"-->
+    <!--        android:fontFamily="monospace"-->
+    <!--        android:textColor="#2D3748"-->
+    <!--        android:text="X: —  Y: —"-->
+    <!--        android:layout_marginTop="8dp" />-->
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:text="No registered beacons in range."
+        android:textSize="15sp"
+        android:textColor="#9AA5B4"
+        android:visibility="visible" />
+
+    <!-- Map Container -->
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:background="#F7FAFC">
+
+        <ImageView
+            android:id="@+id/iv_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:contentDescription="Floor Plan Map" />
+
+        <com.example.urban.UserDotView
+            android:id="@+id/user_dot_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_no_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No map available"
+            android:textColor="#A0AEC0"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+</LinearLayout>

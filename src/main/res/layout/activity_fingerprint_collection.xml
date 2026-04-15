@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:title="Fingerprint Collection" />
+
+    <!-- ── Map area (takes all remaining vertical space) ──────────────────── -->
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F7FAFC">
+
+        <ImageView
+            android:id="@+id/iv_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:contentDescription="Floor Plan Map" />
+
+        <!-- Transparent overlay: draws dots and captures taps -->
+        <com.example.urban.FingerprintMapOverlayView
+            android:id="@+id/fp_map_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_no_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No map — tap to place points, coordinates will still be saved"
+            android:textColor="#A0AEC0"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:padding="24dp"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+    <!-- ── Control panel ──────────────────────────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <!-- Status line -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap the map to select a collection point"
+            android:textSize="14sp"
+            android:textColor="#4A5568"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Selected point display -->
+        <TextView
+            android:id="@+id/tv_selected_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selected: none"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:textColor="#3182CE"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Collection progress bar (hidden while idle) -->
+        <ProgressBar
+            android:id="@+id/progress_collect"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="0"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Action buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Primary: start collection -->
+            <Button
+                android:id="@+id/btn_record"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Record"
+                android:textAllCaps="false"
+                android:layout_marginEnd="6dp" />
+
+            <!-- Enter coordinates manually (no map image needed) -->
+            <Button
+                android:id="@+id/btn_set_manually"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Set X / Y"
+                android:textAllCaps="false"
+                android:layout_marginEnd="6dp" />
+
+            <!-- Undo the last saved fingerprint -->
+            <Button
+                android:id="@+id/btn_undo_last"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Undo Last"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <!-- Summary line -->
+        <TextView
+            android:id="@+id/tv_fp_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fingerprints: 0  |  Active beacons: 0"
+            android:textSize="13sp"
+            android:textColor="#718096"
+            android:fontFamily="monospace"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
