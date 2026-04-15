@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7FAFC">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:title="Firmware Info" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top|center_horizontal"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device Information\nBoard: Nordic Pro Micro nRF52840\nDevelopment Environment Requirements:\n\nVisual Studio Code\nnRF Connect for VS Code\nnRF Connect Extension Pack\n\nLink to Start: https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-VS-Code"
+            android:textSize="18sp"
+            android:textColor="#2D3748"
+            android:lineSpacingExtra="4dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:autoLink="web" />
+
+        <Button
+            android:id="@+id/btnViewSource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📄 View main.c Source"
+            android:layout_marginTop="32dp"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</LinearLayout>

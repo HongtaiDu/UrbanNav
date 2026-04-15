@@ -35,6 +35,10 @@ class AdminHubActivity : AppCompatActivity() {
         binding.btnFirmwareInfo.setOnClickListener {
             startActivity(Intent(this, FirmwareInfoActivity::class.java))
         }
+
+        binding.btnDebugDashboard.setOnClickListener {
+            startActivity(Intent(this, DebugActivity::class.java))
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

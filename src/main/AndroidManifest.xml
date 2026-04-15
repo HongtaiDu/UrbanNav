@@ -35,5 +35,6 @@
         <activity android:name=".FingerprintCollectionActivity" />
         <activity android:name=".FirmwareInfoActivity" />
         <activity android:name=".SourceCodeActivity" />
+        <activity android:name=".DebugActivity" />
     </application>
 </manifest>

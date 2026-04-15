@@ -169,7 +169,7 @@ class MainActivity : AppCompatActivity() {
         // Override the "Enter" button click to keep the dialog open if password is wrong
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
             val password = etPassword.text.toString()
-            if (password == "1") {
+            if (password == "123456") {
                 dialog.dismiss()
                 startActivity(Intent(this, AdminHubActivity::class.java))
             } else {

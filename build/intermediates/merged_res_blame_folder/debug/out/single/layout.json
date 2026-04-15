@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_room_setup.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_room_setup.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/item_beacon_admin.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_beacon_admin.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/sheet_beacon_form.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/sheet_beacon_form.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/item_live_beacon.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_live_beacon.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_admin_hub.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_admin_hub.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_debug.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_debug.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/item_debug_beacon.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_debug_beacon.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_firmware_info.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_firmware_info.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_beacon_detail.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_beacon_detail.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_main.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_source_code.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_source_code.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_admin.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_admin.xml"
+    },
+    {
+        "merged": "com.example.urban-mergeDebugResources-47:/layout/activity_debug.xml",
+        "source": "com.example.urban-main-50:/layout/activity_debug.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/item_beacon.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_beacon.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_fingerprint_collection.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_fingerprint_collection.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/dialog_admin_password.xml",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/dialog_admin_password.xml"
+    }
+]

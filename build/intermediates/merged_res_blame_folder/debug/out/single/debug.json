@@ -1,0 +1,130 @@
+[
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_sheet_beacon_form.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/sheet_beacon_form.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_main.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_item_debug_beacon.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_debug_beacon.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_room_setup.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_room_setup.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.urban-merged_res-48:/layout_activity_debug.xml.flat",
+        "source": "com.example.urban-main-50:/layout/activity_debug.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_fingerprint_collection.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_fingerprint_collection.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/xml_backup_rules.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_debug.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_debug.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_dialog_admin_password.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/dialog_admin_password.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_item_beacon.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_beacon.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_admin.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_admin.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_item_beacon_admin.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_beacon_admin.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_firmware_info.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_firmware_info.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_source_code.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_source_code.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_beacon_detail.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_beacon_detail.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_admin_hub.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_admin_hub.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_item_live_beacon.xml.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_live_beacon.xml"
+    }
+]
