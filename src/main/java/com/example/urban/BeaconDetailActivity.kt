@@ -39,6 +39,9 @@ class BeaconDetailActivity : AppCompatActivity() {
     private val rssiMap     = HashMap<String, Double>()    // MAC → filtered RSSI (dBm)
     private val lastSeenMap = HashMap<String, Long>()
 
+    // ── Position EMA Filter ──────────────────────────────────────────────────
+    private val positionFilter = PositionEmaFilter(alpha = 0.45)
+
     private val STALE_MS = 5_000L
 
     private var scanning = false
@@ -112,6 +115,7 @@ class BeaconDetailActivity : AppCompatActivity() {
         fingerprints.addAll(loadFingerprints(filesDir))
 
         filterMap.clear(); rssiMap.clear(); lastSeenMap.clear()
+        positionFilter.reset()
 
         startScan()
         handler.post(tickerRunnable)
@@ -193,13 +197,16 @@ class BeaconDetailActivity : AppCompatActivity() {
             "Active: $activeCount beacons  |  Fingerprints: ${fingerprints.size}"
 
         // Phase 2: k-NN position estimate
-        val position = FingerprintEngine.estimate(rssiMap, fingerprints)
+        val rawPosition = FingerprintEngine.estimate(rssiMap, fingerprints)
 
-        if (position != null) {
+        if (rawPosition != null) {
+            // Apply EMA filter to the predicted position
+            val smoothedPosition = positionFilter.update(rawPosition.first, rawPosition.second)
+            
             binding.userDotView.setRoomBounds(roomConfig.width, roomConfig.height)
-            binding.userDotView.updatePosition(position.first, position.second)
+            binding.userDotView.updatePosition(smoothedPosition.first, smoothedPosition.second)
             binding.tvPosition.text =
-                "Position: (${"%.2f".format(position.first)} m,  ${"%.2f".format(position.second)} m)"
+                "Position: (${"%.2f".format(smoothedPosition.first)} m,  ${"%.2f".format(smoothedPosition.second)} m)"
         } else {
             if (fingerprints.isEmpty()) {
                 binding.tvPosition.text = "Position: no fingerprints — collect via Admin first"

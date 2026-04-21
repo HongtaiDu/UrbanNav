@@ -1,5 +1,6 @@
 package com.example.urban
 
+import kotlin.math.pow
 import kotlin.math.sqrt
 
 /**
@@ -13,7 +14,7 @@ import kotlin.math.sqrt
  * 3. Compute the Euclidean distance between the live vector and each
  *    stored fingerprint vector.
  * 4. Sort ascending, pick the k nearest.
- * 5. Assign each neighbour a weight = 1 / distance  (closer in RSSI space
+ * 5. Assign each neighbour a weight = 1 / distance^p (closer in RSSI space
  *    → higher weight).  If any distance is exactly 0 (perfect match) that
  *    fingerprint's coordinates are returned immediately.
  * 6. Return the weighted mean of the k neighbours' physical (x, y) coords.
@@ -28,13 +29,17 @@ object FingerprintEngine {
     /** RSSI substitute for any beacon not present in a vector. */
     private const val MISSING_RSSI = -100.0
 
+    /** 
+     * The power parameter for weight calculation. 
+     * p=1 is linear inverse, p=2 is inverse square (stronger weighting for closer matches).
+     */
+    private const val WEIGHT_POWER = 3.5
+
     /**
      * Estimate position using weighted k-NN.
      *
      * Each of the k nearest fingerprints contributes to the final position
-     * proportionally to 1 / (its Euclidean distance in RSSI space).
-     * A fingerprint with distance 2 therefore pulls the estimate twice as
-     * hard as one with distance 4.
+     * proportionally to 1 / (its Euclidean distance in RSSI space)^p.
      *
      * @param liveRssi     MAC → current filtered RSSI from the live scan
      * @param fingerprints Fingerprint database loaded from storage
@@ -73,13 +78,14 @@ object FingerprintEngine {
             return Pair(exact.x, exact.y)
         }
 
-        // Weighted mean: weight_i = 1 / dist_i
+        // Weighted mean: weight_i = 1 / dist_i^p
         var totalWeight = 0.0
         var weightedX   = 0.0
         var weightedY   = 0.0
 
         for ((dist, fp) in nearest) {
-            val w = 1.0 / dist
+            // Apply a power to the inverse distance to favor stronger matches even more
+            val w = 1.0 / dist.pow(WEIGHT_POWER)
             weightedX   += fp.x * w
             weightedY   += fp.y * w
             totalWeight += w

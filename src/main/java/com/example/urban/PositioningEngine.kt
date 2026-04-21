@@ -10,6 +10,26 @@ data class LiveBeacon(
     val y get() = beacon.y
 }
 
+class PositionEmaFilter(private val alpha: Double = 0.3) {
+    private var lastX: Double? = null
+    private var lastY: Double? = null
+
+    fun update(newX: Double, newY: Double): Pair<Double, Double> {
+        val currentX = lastX?.let { (1 - alpha) * it + alpha * newX } ?: newX
+        val currentY = lastY?.let { (1 - alpha) * it + alpha * newY } ?: newY
+        
+        lastX = currentX
+        lastY = currentY
+        
+        return Pair(currentX, currentY)
+    }
+
+    fun reset() {
+        lastX = null
+        lastY = null
+    }
+}
+
 object PositioningEngine {
 
     /**
