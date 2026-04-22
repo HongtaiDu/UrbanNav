@@ -39,14 +39,15 @@ class BeaconDetailActivity : AppCompatActivity() {
     private val rssiMap     = HashMap<String, Double>()    // MAC → filtered RSSI (dBm)
     private val lastSeenMap = HashMap<String, Long>()
 
-    // ── Position EMA Filter ──────────────────────────────────────────────────
-    private val positionFilter = PositionEmaFilter(alpha = 0.45)
+    // ── Position Kalman Filter ───────────────────────────────────────────────
+    private val positionFilter = PositionKalmanFilter(minQ = 0.1, maxQ = 0.1, R = 2.0)
 
     private val STALE_MS = 5_000L
 
     private var scanning = false
     private val handler  = Handler(Looper.getMainLooper())
     private val SCAN_RESTART_MS = 4 * 60 * 1000L
+    private val UPDATE_INTERVAL_MS = 100L // 10 updates per second
 
     private val scanRestartRunnable = object : Runnable {
         override fun run() {
@@ -60,7 +61,7 @@ class BeaconDetailActivity : AppCompatActivity() {
         override fun run() {
             processRssiBatches()
             refreshUi()
-            handler.postDelayed(this, 1_000L)
+            handler.postDelayed(this, UPDATE_INTERVAL_MS)
         }
     }
 
@@ -200,7 +201,7 @@ class BeaconDetailActivity : AppCompatActivity() {
         val rawPosition = FingerprintEngine.estimate(rssiMap, fingerprints)
 
         if (rawPosition != null) {
-            // Apply EMA filter to the predicted position
+            // Apply Kalman filter to the predicted position
             val smoothedPosition = positionFilter.update(rawPosition.first, rawPosition.second)
             
             binding.userDotView.setRoomBounds(roomConfig.width, roomConfig.height)

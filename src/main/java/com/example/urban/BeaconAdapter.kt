@@ -8,11 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class BeaconAdapter(
-    private var beacons: List<BleDevice>,
-    private val onSelectionChanged: (Set<String>) -> Unit
+    private var beacons: List<BleDevice>
 ) : RecyclerView.Adapter<BeaconAdapter.BeaconViewHolder>() {
-
-    private val selectedMacs = mutableSetOf<String>()
 
     class BeaconViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textName: TextView = view.findViewById(R.id.text_beacon_name)
@@ -31,21 +28,8 @@ class BeaconAdapter(
         holder.textName.text = beacon.name
         holder.textInfo.text = "MAC: ${beacon.mac} | RSSI: ${beacon.rssi} dBm"
         
-        holder.checkBox.setOnCheckedChangeListener(null)
-        holder.checkBox.isChecked = selectedMacs.contains(beacon.mac)
-        
-        holder.checkBox.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                selectedMacs.add(beacon.mac)
-            } else {
-                selectedMacs.remove(beacon.mac)
-            }
-            onSelectionChanged(selectedMacs)
-        }
-
-        holder.itemView.setOnClickListener {
-            holder.checkBox.toggle()
-        }
+        // CheckBox is hidden in XML, but we keep it here to avoid breaking the ViewHolder
+        holder.checkBox.visibility = View.GONE
     }
 
     override fun getItemCount() = beacons.size
@@ -55,11 +39,9 @@ class BeaconAdapter(
         notifyDataSetChanged()
     }
 
-    fun getSelectedMacs(): Set<String> = selectedMacs
+    fun getAllMacs(): List<String> = beacons.map { it.mac }
 
     fun clearSelection() {
-        selectedMacs.clear()
-        onSelectionChanged(selectedMacs)
-        notifyDataSetChanged()
+        // No-op as selection is removed
     }
 }

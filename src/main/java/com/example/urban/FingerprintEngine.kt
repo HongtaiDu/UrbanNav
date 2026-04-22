@@ -33,7 +33,7 @@ object FingerprintEngine {
      * The power parameter for weight calculation. 
      * p=1 is linear inverse, p=2 is inverse square (stronger weighting for closer matches).
      */
-    private const val WEIGHT_POWER = 3.5
+    private const val WEIGHT_POWER = 2.2
 
     /**
      * Estimate position using weighted k-NN.

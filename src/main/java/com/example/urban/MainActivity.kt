@@ -129,21 +129,17 @@ class MainActivity : AppCompatActivity() {
 
         loadBeacons(filesDir).forEach { registeredBeacons[it.mac] = it }
 
-        adapter = BeaconAdapter(emptyList()) { selectedMacs ->
-            binding.btnConnect.isEnabled = selectedMacs.isNotEmpty()
-        }
+        adapter = BeaconAdapter(emptyList())
         binding.rvBeacons.layoutManager = LinearLayoutManager(this)
         binding.rvBeacons.adapter = adapter
 
         binding.btnConnect.setOnClickListener {
-            val selected = adapter.getSelectedMacs()
-            if (selected.isNotEmpty()) {
+            // Automatically use ALL registered beacons, not just currently visible ones
+            val allRegisteredMacs = registeredBeacons.keys.toList()
+            if (allRegisteredMacs.isNotEmpty()) {
                 val intent = Intent(this, BeaconDetailActivity::class.java)
-                intent.putStringArrayListExtra("selected_macs", ArrayList(selected))
+                intent.putStringArrayListExtra("selected_macs", ArrayList(allRegisteredMacs))
                 startActivity(intent)
-
-                // Clear selection so the next session starts fresh
-                adapter.clearSelection()
             }
         }
         binding.btnAdmin.setOnClickListener {
@@ -313,6 +309,8 @@ class MainActivity : AppCompatActivity() {
         val sorted = deviceMap.values.sortedByDescending { it.rssi }
         adapter.updateList(sorted)
         binding.rvBeacons.visibility = if (sorted.isEmpty()) View.GONE else View.VISIBLE
+        // Enable connect button if there are ANY registered beacons, regardless of current visibility
+        binding.btnConnect.isEnabled = registeredBeacons.isNotEmpty()
     }
 
     private fun setStatus(msg: String) { binding.tvScanStatus.text = msg }
