@@ -28,6 +28,9 @@ public final class SheetBeaconFormBinding implements ViewBinding {
   public final Button btnSave;
 
   @NonNull
+  public final Button btnScanMac;
+
+  @NonNull
   public final EditText etMac;
 
   @NonNull
@@ -43,11 +46,13 @@ public final class SheetBeaconFormBinding implements ViewBinding {
   public final TextView tvFormTitle;
 
   private SheetBeaconFormBinding(@NonNull ScrollView rootView, @NonNull Button btnCancel,
-      @NonNull Button btnSave, @NonNull EditText etMac, @NonNull EditText etName,
-      @NonNull EditText etX, @NonNull EditText etY, @NonNull TextView tvFormTitle) {
+      @NonNull Button btnSave, @NonNull Button btnScanMac, @NonNull EditText etMac,
+      @NonNull EditText etName, @NonNull EditText etX, @NonNull EditText etY,
+      @NonNull TextView tvFormTitle) {
     this.rootView = rootView;
     this.btnCancel = btnCancel;
     this.btnSave = btnSave;
+    this.btnScanMac = btnScanMac;
     this.etMac = etMac;
     this.etName = etName;
     this.etX = etX;
@@ -94,6 +99,12 @@ public final class SheetBeaconFormBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnScanMac;
+      Button btnScanMac = ViewBindings.findChildViewById(rootView, id);
+      if (btnScanMac == null) {
+        break missingId;
+      }
+
       id = R.id.etMac;
       EditText etMac = ViewBindings.findChildViewById(rootView, id);
       if (etMac == null) {
@@ -124,8 +135,8 @@ public final class SheetBeaconFormBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SheetBeaconFormBinding((ScrollView) rootView, btnCancel, btnSave, etMac, etName,
-          etX, etY, tvFormTitle);
+      return new SheetBeaconFormBinding((ScrollView) rootView, btnCancel, btnSave, btnScanMac,
+          etMac, etName, etX, etY, tvFormTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

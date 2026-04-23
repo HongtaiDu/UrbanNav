@@ -12,12 +12,16 @@
         "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_debug_beacon.xml"
     },
     {
-        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.urban-merged_res-48:/layout_sheet_beacon_form.xml.flat",
+        "source": "com.example.urban-main-50:/layout/sheet_beacon_form.xml"
     },
     {
         "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_activity_room_setup.xml.flat",
         "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_room_setup.xml"
+    },
+    {
+        "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/mipmap-mdpi/ic_launcher.webp"
     },
     {
         "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/drawable_ic_launcher_background.xml.flat",
@@ -122,9 +126,5 @@
     {
         "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-merged_res-48:/layout_item_live_beacon.xml.flat",
         "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/item_live_beacon.xml"
-    },
-    {
-        "merged": "com.example.urban-merged_res-48:/layout_item_beacon.xml.flat",
-        "source": "com.example.urban-main-50:/layout/item_beacon.xml"
     }
 ]

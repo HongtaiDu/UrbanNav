@@ -3256,6 +3256,7 @@ id btnFirmwareInfo
 id btnRemoveImage
 id btnRoomSetup
 id btnSave
+id btnScanMac
 id btnUploadImage
 id btnViewSource
 id btn_admin

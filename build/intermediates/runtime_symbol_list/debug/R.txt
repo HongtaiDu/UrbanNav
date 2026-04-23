@@ -3255,6 +3255,7 @@ int id btnFirmwareInfo 0x7f080069
 int id btnRemoveImage 0x7f08006a
 int id btnRoomSetup 0x7f08006b
 int id btnSave 0x7f08006c
+int id btnScanMac 0x7f080240
 int id btnUploadImage 0x7f08006d
 int id btnViewSource 0x7f08006e
 int id btn_admin 0x7f08006f

@@ -20,10 +20,6 @@
         "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_admin_hub.xml"
     },
     {
-        "merged": "com.example.urban-mergeDebugResources-47:/layout/item_beacon.xml",
-        "source": "com.example.urban-main-50:/layout/item_beacon.xml"
-    },
-    {
         "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_debug.xml",
         "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_debug.xml"
     },
@@ -50,6 +46,10 @@
     {
         "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/activity_admin.xml",
         "source": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-main-50:/layout/activity_admin.xml"
+    },
+    {
+        "merged": "com.example.urban-mergeDebugResources-47:/layout/sheet_beacon_form.xml",
+        "source": "com.example.urban-main-50:/layout/sheet_beacon_form.xml"
     },
     {
         "merged": "/Users/chrisfonseca/.gradle/daemon/8.7/com.example.urban-mergeDebugResources-47:/layout/item_beacon.xml",

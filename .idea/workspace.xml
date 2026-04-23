@@ -27,12 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e782c47e-eb52-4af6-99df-15efd4365765" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/urban/BeaconDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/urban/BeaconDetailActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/urban/FingerprintEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/urban/FingerprintEngine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/urban/PositioningEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/urban/PositioningEngine.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +37,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=/Users/chrisfonseca/.android/avd/Pixel_8_Pro_API_TiramisuPrivacySandbox.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[PhysicalDevice::serial=ZT4227T439]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />

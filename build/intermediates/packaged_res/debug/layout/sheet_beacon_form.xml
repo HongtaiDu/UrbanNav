@@ -28,13 +28,28 @@
             android:textColor="#718096"
             android:layout_marginBottom="4dp" />
 
-        <EditText
-            android:id="@+id/etMac"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textCapCharacters"
-            android:fontFamily="monospace"
-            android:layout_marginBottom="16dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/etMac"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="textCapCharacters"
+                android:fontFamily="monospace" />
+
+            <Button
+                android:id="@+id/btnScanMac"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
