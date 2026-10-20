@@ -14,7 +14,7 @@ The mobile app estimates distance from each beacon using **RSSI (Received Signal
 
 - **Institution:** New York University (NYU)
 - **Course:** [ECE-UY - 4183	Wireless Communications]
-- **Instructor:** [Dr. Micheal Knox]
+- **Instructor:** [Dr. Michael Knox]
 
 Future development goals include multi-beacon trilateration for improved positioning accuracy, sensor fusion, and support for multiple floors.
 
